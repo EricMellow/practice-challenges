@@ -61,3 +61,14 @@ const fibonacci = () => {
   }
   return sequence
 }
+
+// Problem 4
+// Write a function that given a list of non negative integers, arranges them such that they form the largest possible number.For example, given[50, 2, 1, 9], the largest formed number is 95021.
+
+const integers = [3, 30, 34, 5, 9]
+
+const largestNum = (array) => {
+  array.sort()
+  array.reverse()
+  return array.join('')
+}
