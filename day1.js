@@ -31,3 +31,19 @@ const sumNums3 = (numbers, answer = 0) => {
   numbers.shift()
   return sumNums3(numbers, newAnswer)
 }
+
+// Problem 2
+// Write a function that combines two lists by alternatingly taking elements.For example: given the two lists[a, b, c] and[1, 2, 3], the function should return [a, 1, b, 2, c, 3].
+
+const array1 = ['a', 'b', 'c']
+const array2 = [1, 2, 3]
+
+const combine = (array1, array2, combinedArray = []) => {
+  if (!array1.length && !array2.length) {
+    return combinedArray
+  }
+
+  combinedArray.push(array1.shift())
+  combinedArray.push(array2.shift())
+  return combine(array1, array2, combinedArray)
+}
