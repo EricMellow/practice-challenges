@@ -100,3 +100,9 @@ function accum(string) {
 // Give your answer in string format as 'odd' or 'even'.
 // If the input array is empty consider it as: [0](array with a zero).
 
+function oddOrEven(array) {
+  const total = array.reduce((sum, number) => {
+    return sum + number
+  }, 0)
+  return total % 2 === 0 ? 'even' : 'odd'
+}
