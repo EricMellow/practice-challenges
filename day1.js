@@ -72,3 +72,13 @@ const largestNum = (array) => {
   array.reverse()
   return array.join('')
 }
+
+// Problem 5
+// The examples below show you how to write function accum:
+
+//   Examples:
+// accum("abcd");    // "A-Bb-Ccc-Dddd"
+// accum("RqaEzty"); // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt");    // "C-Ww-Aaa-Tttt"
+
+// Create this function
