@@ -112,3 +112,19 @@ function oddOrEven(array) {
 
 // Create a function that takes a string and returns the string ciphered with Rot13.If there are numbers or special characters included in the string, they should be returned as they are.Only letters from the latin / english alphabet should be shifted, like in the original Rot13 "implementation".
 
+function rot13(message) {
+  const lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
+  const splitMessage = message.split('')
+  const encodedLetters = splitMessage.map(letter => {
+    if (lowercase.includes(letter)) {
+      const index = (lowercase.indexOf(letter) + 13) % 26
+      return lowercase[index]
+    } else if (lowercase.includes(letter.toLowerCase())) {
+      const index = (lowercase.indexOf(letter.toLowerCase()) + 13) % 26
+      return lowercase[index].toUpperCase()
+    } else {
+      return letter
+    }
+  })
+  return encodedLetters.join('')
+}
