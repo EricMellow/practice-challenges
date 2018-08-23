@@ -82,3 +82,14 @@ const largestNum = (array) => {
 // accum("cwAt");    // "C-Ww-Aaa-Tttt"
 
 // Create this function
+
+function accum(string) {
+  const letterArray = string.split('')
+  const output = letterArray.map((letter, index) => {
+    if (index === letterArray.length - 1) {
+      return letter.toUpperCase() + letter.toLowerCase().repeat(index)
+    }
+    return letter.toUpperCase() + letter.toLowerCase().repeat(index) + '-'
+  })
+  return output.join('')
+}
