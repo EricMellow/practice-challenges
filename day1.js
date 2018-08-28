@@ -128,3 +128,15 @@ function rot13(message) {
   })
   return encodedLetters.join('')
 }
+
+// Problem 8
+// Given an integer as input, can you round it to the next(meaning, "higher") 5?
+// Input may be any positive or negative integer(including 0).
+// You can assume that all inputs are valid integers.
+
+function roundToNext5(num) {
+  while (num % 5 !== 0) {
+    num++
+  }
+  return num
+}
