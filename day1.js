@@ -140,3 +140,36 @@ function roundToNext5(num) {
   }
   return num
 }
+
+// Problem 9
+// Build Tower by the following given argument:
+// number of floors(integer and always greater than 0).
+// Tower block is represented as *
+// for example, a tower of 3 floors looks like below
+
+// [
+//   '  *  ',
+//   ' *** ',
+//   '*****'
+// ]
+// and a tower of 6 floors looks like below
+
+// [
+//   '     *     ',
+//   '    ***    ',
+//   '   *****   ',
+//   '  *******  ',
+//   ' ********* ',
+//   '***********'
+// ]
+
+function towerBuilder(nFloors) {
+  let tower = [];
+  let num = 1;
+  for (let index = 0; index < nFloors; index++) {
+    tower.push(' '.repeat(nFloors - num) + '*'.repeat(index + num) + ' '.repeat(nFloors - num))
+    num++
+  }
+  return tower
+}
+
