@@ -42,3 +42,14 @@ const betterCar: ICar = {
   make: 'Tesla',
   displaySound: () => { console.log('vroom'); }
 };
+
+// GENERICS
+
+function genericFunc<T>(argument: T): T[] {
+  var arrayOfT: T[] = [];
+  arrayOfT.push(argument);
+  return arrayOfT;
+}
+
+var arrayFromString = genericFunc<string>('Hello, world');
+var arrayFromNum = genericFunc<number>(23);

@@ -25,3 +25,11 @@ var betterCar = {
     make: 'Tesla',
     displaySound: function () { console.log('vroom'); }
 };
+// GENERICS
+function genericFunc(argument) {
+    var arrayOfT = [];
+    arrayOfT.push(argument);
+    return arrayOfT;
+}
+var arrayFromString = genericFunc('Hello, world');
+var arrayFromNum = genericFunc(23);
