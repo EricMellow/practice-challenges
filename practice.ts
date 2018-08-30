@@ -10,13 +10,13 @@ let num: number = 5;
 let myName: string = 'Eric';
 let myBool: boolean = true;
 
-
+// CLASS
 class Car {
-  model: String;
-  doors: Number;
-  isElectric: Boolean;
+  model: string;
+  doors: number;
+  isElectric: boolean;
 
-  constructor(model: String, doors: Number, isElectric: Boolean) {
+  constructor(model: string, doors: number, isElectric: boolean) {
     this.model = model;
     this.doors = doors;
     this.isElectric = isElectric;
@@ -26,3 +26,19 @@ class Car {
     console.log(`This car is a ${this.model}`)
   }
 }
+
+const Prius = new Car('Tesla', 4, true);
+Prius.displayMake();
+
+// INTERFACE
+interface ICar {
+  model: string,
+  make: string,
+  displaySound(): void
+}
+
+const betterCar: ICar = {
+  model: 'Roadster',
+  make: 'Tesla',
+  displaySound: () => { console.log('vroom'); }
+};
