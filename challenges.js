@@ -246,3 +246,37 @@ const uniqueInOrder = ([...input]) => {
   })
   return answer
 }
+
+// Problem 13
+// Given: an array containing hashes of names
+// Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+
+// Example:
+// list([{ name: 'Bart' }, { name: 'Lisa' }, { name: 'Maggie' }])
+// returns 'Bart, Lisa & Maggie'
+
+function list(people) {
+  if (people.length === 1) {
+    return people[0].name
+  } else if (people.length === 2) {
+    return (people[0].name + ' & ' + people[1].name)
+  } else if (people.length === 3) {
+    return (people[0].name + ', ' + people[1].name + ' & ' + people[2].name)
+  } else {
+    let stringOfNames = ''
+    let index = 0
+    while (index < people.length) {
+      if (index === 0) {
+        stringOfNames += people[index].name
+        index++
+      } else if (index === people.length - 1) {
+        stringOfNames += (' & ' + people[index].name)
+        index++
+      } else {
+        stringOfNames += (', ' + people[index].name)
+        index++
+      }
+    }
+    return stringOfNames
+  }
+}
