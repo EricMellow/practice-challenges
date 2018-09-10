@@ -358,3 +358,17 @@ function validate(password) {
 
 // What if the string is empty ? Then the result should be empty object literal { }
 
+function count(string) {
+  if (string === '') {
+    return {}
+  } else {
+    let alphas = string.split('').reduce((alphas, letter) => {
+      if (!alphas[letter]) {
+        alphas[letter] = 0
+      }
+      alphas[letter]++
+      return alphas
+    }, {})
+    return alphas
+  }
+}
