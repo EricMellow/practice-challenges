@@ -349,3 +349,6 @@ const data = {
 // contains a number
 // Valid passwords will only be alphanumeric characters.
 
+function validate(password) {
+  return /(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.{6,})/.test(password);
+}
