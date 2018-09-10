@@ -340,3 +340,12 @@ const data = {
   '9': ['6', '8', '9'],
   '0': ['0', '8'],
 }
+
+// Problem 15
+// You need to write regex that will validate a password to make sure it meets the following criteria:
+// At least six characters long
+// contains a lowercase letter
+// contains an uppercase letter
+// contains a number
+// Valid passwords will only be alphanumeric characters.
+
