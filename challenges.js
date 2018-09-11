@@ -453,3 +453,21 @@ keyPresses(message)
 // if n is 0, return an empty array
 // if n is anything other than an integer or integer - formatted string(e.g. '123') that is >= 0, throw a TypeError
 // When throwing a TypeError, the message should be n is invalid, where you replace n for the actual value passed to the function.
+
+function prefill(num, value) {
+  let realNum = parseInt(num)
+  let returnArray = []
+  if (realNum === 0) {
+    return []
+  }
+  if (!value) {
+    value = undefined;
+  }
+  if (!realNum || realNum < 0 || /(?=.*[\.])/.test(num)) {
+    throw new TypeError(`${num} is invalid`);
+  }
+  for (let i = 0; i < num; i++) {
+    returnArray.push(value)
+  }
+  return returnArray
+}
