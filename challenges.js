@@ -424,3 +424,22 @@ const alphaData = { a: "1", b: "2", c: "3", d: "4", e: "5", f: "6", g: "7", h: "
 // In order to send the message "WHERE DO U WANT 2 MEET L8R" a teen would have to actually do 47 button presses.No wonder they abbreviated.
 
 // For this assignment, write a module that can calculate the amount of button presses required for any phrase.Punctuation can be ignored for this exercise.Likewise, you can assume the phone doesn't distinguish between upper/lowercase characters (but you should allow your module to accept input in either for convenience).
+
+const message = "WHERE DO U WANT 2 MEET L8R"
+
+const keyPresses = (string) => {
+  const splitString = string.split("")
+  const presses = splitString.reduce((presses, letter) => {
+    keyboard.forEach(key => {
+      if (key.includes(letter.toLowerCase())) {
+        presses += key.indexOf(letter.toLowerCase()) + 1
+      }
+    })
+    return presses
+  }, 0)
+  return presses
+}
+
+const keyboard = [["1"], ["a", "b", "c", "2"], ["d", "e", "f", "3"], ["g", "h", "i", "4"], ["j", "k", "l", "5"], ["m", "n", "o", "6"], ["p", "q", "r", "s", "7"], ["t", "u", "v", "8"], ["w", "x", "y", "z", "9"], ["*"], [" ", "0"], ["#"]]
+
+keyPpresses(message)
